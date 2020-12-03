@@ -131,21 +131,21 @@ function editTask(msg)
   if(dataPos != -1){
     switch(arg){
       case 'title':
-        BOT_DATA.splice(dataPos);
+        BOT_DATA.splice(dataPos, 1);
         tempArr.title = data;
         BOT_DATA.push(tempArr);
         msg.channel.send('Here is the changes, ' + '```' + JSON.stringify(tempArr)) + '```';
         break;
 
       case 'task':
-        BOT_DATA.splice(dataPos);
+        BOT_DATA.splice(dataPos, 1);
         tempArr.desc = data;
         BOT_DATA.push(tempArr);
         msg.channel.send('Here is the changes, ' + '```' + JSON.stringify(tempArr)) + '```';
         break;
 
       case 'date':
-        BOT_DATA.splice(dataPos);
+        BOT_DATA.splice(dataPos, 1);
         tempArr.date = data;
         BOT_DATA.push(tempArr);
         msg.channel.send('Here is the changes, ' + '```' + JSON.stringify(tempArr) + '```');
@@ -170,7 +170,7 @@ function deleteTask(msg)
   console.log('function for editask: ' + arg + ' outcome :' + dataPos.toString());
 
   if(dataPos != -1){
-    BOT_DATA.splice(dataPos)
+    BOT_DATA.splice(dataPos, 1)
     msg.reply('Task ID:' + arg + '\n```' + JSON.stringify(tempArr) +'```');
   }else{
     msg.reply('Task not found! or wrong syntax!');
