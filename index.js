@@ -139,7 +139,7 @@ function editTask(msg)
 
       case 'task':
         BOT_DATA.splice(dataPos, 1);
-        tempArr.desc = data;
+        tempArr.task = data;
         BOT_DATA.push(tempArr);
         msg.channel.send('Here is the changes, ' + '```' + JSON.stringify(tempArr)) + '```';
         break;
